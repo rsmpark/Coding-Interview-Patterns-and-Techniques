@@ -1,26 +1,7 @@
 import java.util.HashMap;
 
 public class NoRepeatSubstring {
-  // public static int findLength(String str) {
-  // int start = 0, length = 0;
-
-  // HashMap<Character, Integer> charFreqMap = new HashMap<Character, Integer>();
-
-  // for (int end = 0; end < str.length(); end++) {
-  // char rightChar = str.charAt(end);
-  // charFreqMap.put(rightChar, charFreqMap.getOrDefault(rightChar, 0) + 1);
-
-  // while (charFreqMap.get(rightChar) > 1) {
-  // char leftChar = str.charAt(start++);
-  // charFreqMap.put(leftChar, charFreqMap.get(leftChar) - 1);
-  // }
-
-  // length = Math.max(length, end - start + 1);
-  // }
-
-  // return length;
-  // }
-
+  // Optimized Version
   public static int findLength(String str) {
     int windowStart = 0, maxLength = 0;
     HashMap<Character, Integer> charIndexMap = new HashMap<Character, Integer>();
@@ -42,6 +23,26 @@ public class NoRepeatSubstring {
     }
     return maxLength;
   }
+
+  // public static int findLength(String str) {
+  // int start = 0, length = 0;
+
+  // HashMap<Character, Integer> charFreqMap = new HashMap<Character, Integer>();
+
+  // for (int end = 0; end < str.length(); end++) {
+  // char rightChar = str.charAt(end);
+  // charFreqMap.put(rightChar, charFreqMap.getOrDefault(rightChar, 0) + 1);
+
+  // while (charFreqMap.get(rightChar) > 1) {
+  // char leftChar = str.charAt(start++);
+  // charFreqMap.put(leftChar, charFreqMap.get(leftChar) - 1);
+  // }
+
+  // length = Math.max(length, end - start + 1);
+  // }
+
+  // return length;
+  // }
 
   public static void main(String[] args) {
     System.out.println("Length of the longest substring: " + NoRepeatSubstring.findLength("aabccbb"));
